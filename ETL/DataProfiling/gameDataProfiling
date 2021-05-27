@@ -1,0 +1,2321 @@
+<?xml version="1.0"?>
+<DataProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/sqlserver/2008/DataDebugger/">
+  <ProfileVersion>1.0</ProfileVersion>
+  <DataSources>
+    <DtsDataSource ID="{6D3FC499-ED47-4D85-952E-B267E2C62A5F}" Name="DESKTOP-5DSST93.NHL_Game_Staging.msSqlServer">
+      <DtsConnectionManagerID>DESKTOP-5DSST93.NHL_Game_Staging.msSqlServer</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{5502FA0E-AEC4-4562-AD07-A68B8D95298F}" Name="game_playsDataProfiling">
+      <DtsConnectionManagerID>game_playsDataProfiling</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{8CA29335-718C-4C5E-8321-875ACF55C1EF}" Name="game_skater_statsDataProfiling">
+      <DtsConnectionManagerID>game_skater_statsDataProfiling</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{EF3549BC-5CA1-4E58-A6AD-05E5C25C1429}" Name="game_SkaterDataProfiling">
+      <DtsConnectionManagerID>game_SkaterDataProfiling</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{61F418B3-D280-4AC5-A262-B469C8462AF5}" Name="gameDataProfiling">
+      <DtsConnectionManagerID>gameDataProfiling</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{A971F6DD-ED2A-4722-8E90-412E9455C11C}" Name="player_infoDataProfiling">
+      <DtsConnectionManagerID>player_infoDataProfiling</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{94DE901E-5759-4A9D-9C78-2B10AA2DAF1E}" Name="team_infoDataProfiling">
+      <DtsConnectionManagerID>team_infoDataProfiling</DtsConnectionManagerID>
+    </DtsDataSource>
+  </DataSources>
+  <DataProfileInput>
+    <ProfileMode>Exact</ProfileMode>
+    <Timeout>0</Timeout>
+    <Requests>
+      <ColumnNullRatioProfileRequest ID="NullRatioReq">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table Schema="dbo" Table="game" />
+        <Column IsWildCard="true" />
+      </ColumnNullRatioProfileRequest>
+      <ColumnStatisticsProfileRequest ID="StatisticsReq">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table Schema="dbo" Table="game" />
+        <Column IsWildCard="true" />
+      </ColumnStatisticsProfileRequest>
+      <ColumnLengthDistributionProfileRequest ID="LengthDistReq">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table Schema="dbo" Table="game" />
+        <Column IsWildCard="true" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+      </ColumnLengthDistributionProfileRequest>
+      <ColumnValueDistributionProfileRequest ID="ValueDistReq">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table Schema="dbo" Table="game" />
+        <Column IsWildCard="true" />
+        <Option>FrequentValues</Option>
+        <FrequentValueThreshold>0.001</FrequentValueThreshold>
+      </ColumnValueDistributionProfileRequest>
+      <ColumnPatternProfileRequest ID="PatternReq">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table Schema="dbo" Table="game" />
+        <Column IsWildCard="true" />
+        <MaxNumberOfPatterns>10</MaxNumberOfPatterns>
+        <PercentageDataCoverageDesired>95</PercentageDataCoverageDesired>
+        <CaseSensitive>false</CaseSensitive>
+        <Delimiters> \t\r\n</Delimiters>
+        <Symbols>,.;:-"'`~=&amp;/\\@!?()&lt;&gt;[]{}|#*^%</Symbols>
+        <TagTableName />
+      </ColumnPatternProfileRequest>
+      <CandidateKeyProfileRequest ID="KeyReq">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table Schema="dbo" Table="game" />
+        <KeyColumns>
+          <Column IsWildCard="true" />
+        </KeyColumns>
+        <ThresholdSetting>Specified</ThresholdSetting>
+        <KeyStrengthThreshold>0.95</KeyStrengthThreshold>
+        <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
+        <MaxNumberOfViolations>100</MaxNumberOfViolations>
+      </CandidateKeyProfileRequest>
+      <FunctionalDependencyProfileRequest ID="FDReq">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table Schema="dbo" Table="game" />
+        <DeterminantColumns>
+          <Column IsWildCard="true" />
+        </DeterminantColumns>
+        <DependentColumn IsWildCard="true" />
+        <ThresholdSetting>Specified</ThresholdSetting>
+        <FDStrengthThreshold>0.95</FDStrengthThreshold>
+        <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
+        <MaxNumberOfViolations>100</MaxNumberOfViolations>
+      </FunctionalDependencyProfileRequest>
+    </Requests>
+  </DataProfileInput>
+  <DataProfileOutput>
+    <Profiles>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="game_id" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="season" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="type" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="date_time_GMT" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="away_team_id" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="home_team_id" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="away_goals" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="home_goals" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="outcome" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="home_rink_side_start" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="venue" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="venue_link" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="venue_time_zone_id" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="venue_time_zone_offset" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="venue_time_zone_tz" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="date" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="game_id" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>2000020001</MinValue>
+        <MaxValue>2019040653</MaxValue>
+        <Mean>2010765072.36472</Mean>
+        <StdDev>6073452.56079227</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="season" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>20002001</MinValue>
+        <MaxValue>20192020</MaxValue>
+        <Mean>20109452.1546094</Mean>
+        <StdDev>60737.3331071403</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="away_team_id" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>1</MinValue>
+        <MaxValue>90</MaxValue>
+        <Mean>16.8793765443832</Mean>
+        <StdDev>11.1847070588809</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="home_team_id" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>1</MinValue>
+        <MaxValue>90</MaxValue>
+        <Mean>16.8814293860483</Mean>
+        <StdDev>11.2054124820972</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="away_goals" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>11</MaxValue>
+        <Mean>2.68796806690743</Mean>
+        <StdDev>1.6190375900068</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="home_goals" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>12</MaxValue>
+        <Mean>2.95898118228474</Mean>
+        <StdDev>1.68899904106484</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="venue_time_zone_offset" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-8</MinValue>
+        <MaxValue>-4</MaxValue>
+        <Mean>-5.06614712031933</Mean>
+        <StdDev>1.21012179314883</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="date" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>2000-10-04T00:00:00.0000000</MinValue>
+        <MaxValue>2020-09-29T00:00:00.0000000</MaxValue>
+      </ColumnStatisticsProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="type" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>1</MinLength>
+        <MaxLength>1</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>1</Length>
+            <Count>26305</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="date_time_GMT" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>20</MinLength>
+        <MaxLength>20</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>20</Length>
+            <Count>26305</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="outcome" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>10</MinLength>
+        <MaxLength>12</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>12</Length>
+            <Count>20163</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>10</Length>
+            <Count>628</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>11</Length>
+            <Count>5514</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="home_rink_side_start" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>2</MinLength>
+        <MaxLength>5</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>4</Length>
+            <Count>11683</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>5</Length>
+            <Count>13426</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>2</Length>
+            <Count>1196</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="venue" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>8</MinLength>
+        <MaxLength>34</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>23</Length>
+            <Count>410</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>9</Length>
+            <Count>969</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>15</Length>
+            <Count>1795</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>26</Length>
+            <Count>328</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>12</Length>
+            <Count>3736</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>21</Length>
+            <Count>1447</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>24</Length>
+            <Count>809</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>18</Length>
+            <Count>1579</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>30</Length>
+            <Count>82</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>10</Length>
+            <Count>1252</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>19</Length>
+            <Count>538</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>25</Length>
+            <Count>135</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>13</Length>
+            <Count>1724</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>22</Length>
+            <Count>408</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>16</Length>
+            <Count>2821</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>17</Length>
+            <Count>2200</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>34</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>11</Length>
+            <Count>1329</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>20</Length>
+            <Count>2110</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>28</Length>
+            <Count>240</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>14</Length>
+            <Count>2389</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>8</Length>
+            <Count>3</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="venue_link" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>19</MinLength>
+        <MaxLength>19</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>19</Length>
+            <Count>26305</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="venue_time_zone_id" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>14</MinLength>
+        <MaxLength>19</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>15</Length>
+            <Count>6948</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>19</Length>
+            <Count>2878</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>16</Length>
+            <Count>13896</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>17</Length>
+            <Count>870</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>14</Length>
+            <Count>1713</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="venue_time_zone_tz" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>3</MinLength>
+        <MaxLength>3</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>3</Length>
+            <Count>26305</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="type" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>3</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>P</Value>
+            <Count>1124</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>R</Value>
+            <Count>25171</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="date_time_GMT" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>14468</NumberOfDistinctValues>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="outcome" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>8</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>away win REG</Value>
+            <Count>8897</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>away win OT</Value>
+            <Count>2716</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>tbc win OT</Value>
+            <Count>628</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>home win OT</Value>
+            <Count>2784</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>home win REG</Value>
+            <Count>11256</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="home_rink_side_start" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>3</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>left</Value>
+            <Count>11683</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>right</Value>
+            <Count>13426</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>NA</Value>
+            <Count>1196</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="venue" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>111</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>Prudential Center</Value>
+            <Count>594</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Glendale Arena</Value>
+            <Count>86</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>TD Garden</Value>
+            <Count>572</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Joe Louis Arena</Value>
+            <Count>657</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Jobing.com Arena</Value>
+            <Count>317</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Continental Airlines Arena</Value>
+            <Count>246</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>BankAtlantic Center</Value>
+            <Count>290</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>United Center</Value>
+            <Count>871</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Corel Centre</Value>
+            <Count>164</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Rexall Place</Value>
+            <Count>475</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>First Niagara Center</Value>
+            <Count>187</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>NYCB Live/Nassau Coliseum</Value>
+            <Count>94</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Centre Bell</Value>
+            <Count>777</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Scotiabank Saddledome</Value>
+            <Count>471</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>National Car Rental Center</Value>
+            <Count>82</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Philips Arena</Value>
+            <Count>410</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Scotiabank Place</Value>
+            <Count>317</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Mellon Arena</Value>
+            <Count>368</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Wachovia Center</Value>
+            <Count>246</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Pepsi Center</Value>
+            <Count>841</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>FleetCenter</Value>
+            <Count>164</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Air Canada Centre</Value>
+            <Count>688</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Enterprise Center</Value>
+            <Count>184</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Bell MTS Place</Value>
+            <Count>209</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>TD Banknorth Garden</Value>
+            <Count>164</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Canadian Tire Centre</Value>
+            <Count>372</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>MCI Center</Value>
+            <Count>164</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>PPG Paints Arena</Value>
+            <Count>257</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Amalie Arena</Value>
+            <Count>348</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>St. Pete Times Forum</Value>
+            <Count>350</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Entertainment and Sports Arena</Value>
+            <Count>82</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Office Depot Center</Value>
+            <Count>82</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Rogers Arena</Value>
+            <Count>484</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KeyBank Center</Value>
+            <Count>231</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Scottrade Center</Value>
+            <Count>502</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Arrowhead Pond</Value>
+            <Count>205</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Little Caesars Arena</Value>
+            <Count>197</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Nassau Coliseum</Value>
+            <Count>562</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Savvis Center</Value>
+            <Count>205</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>STAPLES Center</Value>
+            <Count>864</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Wells Fargo Center</Value>
+            <Count>479</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Tampa Bay Times Forum</Value>
+            <Count>93</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Xcel Energy Center</Value>
+            <Count>851</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>General Motors Place</Value>
+            <Count>369</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Capital One Arena</Value>
+            <Count>209</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Scotiabank Arena</Value>
+            <Count>263</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Gila River Arena</Value>
+            <Count>312</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Centre Molson</Value>
+            <Count>82</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>San Jose Arena</Value>
+            <Count>41</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Nationwide Arena</Value>
+            <Count>851</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>HSBC Arena</Value>
+            <Count>412</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>RBC Center</Value>
+            <Count>363</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>American Airlines Center</Value>
+            <Count>809</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Gaylord Entertainment Center</Value>
+            <Count>240</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Verizon Center</Value>
+            <Count>510</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Bridgestone Arena</Value>
+            <Count>519</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Pengrowth Saddledome</Value>
+            <Count>369</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>BB&amp;T Center</Value>
+            <Count>382</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Rogers Place</Value>
+            <Count>386</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>CONSOL Energy Center</Value>
+            <Count>265</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>T-Mobile Arena</Value>
+            <Count>217</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Ice Palace</Value>
+            <Count>82</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Honda Center</Value>
+            <Count>668</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>SAP Center at San Jose</Value>
+            <Count>408</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>First Union Center</Value>
+            <Count>123</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>PNC Arena</Value>
+            <Count>396</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Barclays Center</Value>
+            <Count>194</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Skyreach Centre</Value>
+            <Count>123</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>MTS Centre</Value>
+            <Count>230</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Madison Square Garden</Value>
+            <Count>882</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Sommet Center</Value>
+            <Count>111</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>America West Arena</Value>
+            <Count>123</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Compaq Center at San Jose</Value>
+            <Count>41</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Reunion Arena</Value>
+            <Count>41</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>HP Pavilion at San Jose</Value>
+            <Count>408</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="venue_link" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>34</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>/api/v1/venues/5067</Value>
+            <Count>27</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>/api/v1/venues/5030</Value>
+            <Count>158</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>/api/v1/venues/5019</Value>
+            <Count>399</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>/api/v1/venues/5075</Value>
+            <Count>154</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>/api/v1/venues/5145</Value>
+            <Count>156</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>/api/v1/venues/5054</Value>
+            <Count>424</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>/api/v1/venues/5081</Value>
+            <Count>385</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>/api/v1/venues/5064</Value>
+            <Count>342</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>/api/v1/venues/5027</Value>
+            <Count>150</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>/api/v1/venues/5059</Value>
+            <Count>452</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>/api/v1/venues/5058</Value>
+            <Count>158</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>/api/v1/venues/5015</Value>
+            <Count>283</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>/api/v1/venues/5085</Value>
+            <Count>178</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>/api/v1/venues/5072</Value>
+            <Count>159</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>/api/v1/venues/5047</Value>
+            <Count>286</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>/api/v1/venues/5076</Value>
+            <Count>256</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>/api/v1/venues/5043</Value>
+            <Count>148</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>/api/v1/venues/5096</Value>
+            <Count>148</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>/api/v1/venues/5100</Value>
+            <Count>298</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>/api/v1/venues/5026</Value>
+            <Count>66</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>/api/v1/venues/5031</Value>
+            <Count>156</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>/api/v1/venues/5034</Value>
+            <Count>156</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>/api/v1/venues/5066</Value>
+            <Count>162</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>/api/v1/venues/5017</Value>
+            <Count>152</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>/api/v1/venues/null</Value>
+            <Count>19352</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>/api/v1/venues/5178</Value>
+            <Count>162</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>/api/v1/venues/5094</Value>
+            <Count>156</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>/api/v1/venues/5073</Value>
+            <Count>152</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>/api/v1/venues/5098</Value>
+            <Count>429</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>/api/v1/venues/5046</Value>
+            <Count>226</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>/api/v1/venues/5092</Value>
+            <Count>419</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>/api/v1/venues/5039</Value>
+            <Count>150</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="venue_time_zone_id" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>11</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>America/Detroit</Value>
+            <Count>856</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>America/Los_Angeles</Value>
+            <Count>2878</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>America/Edmonton</Value>
+            <Count>839</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>America/New_York</Value>
+            <Count>11740</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>America/Denver</Value>
+            <Count>1713</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>America/Phoenix</Value>
+            <Count>847</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>America/Winnipeg</Value>
+            <Count>448</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>America/Chicago</Value>
+            <Count>4394</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>America/Vancouver</Value>
+            <Count>870</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>America/Montreal</Value>
+            <Count>869</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>America/Toronto</Value>
+            <Count>851</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="venue_time_zone_tz" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>8</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>EDT</Value>
+            <Count>11997</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>MST</Value>
+            <Count>1269</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>PST</Value>
+            <Count>717</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>CST</Value>
+            <Count>856</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>CDT</Value>
+            <Count>3986</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>PDT</Value>
+            <Count>3031</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>MDT</Value>
+            <Count>2130</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>EST</Value>
+            <Count>2319</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="date" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>3728</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>2018-11-22T00:00:00.0000000</Value>
+            <Count>28</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-02-08T00:00:00.0000000</Value>
+            <Count>28</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2020-01-12T00:00:00.0000000</Value>
+            <Count>28</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-02-03T00:00:00.0000000</Value>
+            <Count>28</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2020-02-02T00:00:00.0000000</Value>
+            <Count>28</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnPatternProfile ProfileRequestID="PatternReq" IsExact="false">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="type" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <TopRegexPatterns>
+          <PatternDistributionItem>
+            <RegexText>R</RegexText>
+            <Frequency>96</Frequency>
+          </PatternDistributionItem>
+        </TopRegexPatterns>
+      </ColumnPatternProfile>
+      <ColumnPatternProfile ProfileRequestID="PatternReq" IsExact="false">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="date_time_GMT" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <TopRegexPatterns>
+          <PatternDistributionItem>
+            <RegexText>20\d\d-\d\d-\d\dT\d\d:\d\d:00Z</RegexText>
+            <Frequency>100</Frequency>
+          </PatternDistributionItem>
+        </TopRegexPatterns>
+      </ColumnPatternProfile>
+      <ColumnPatternProfile ProfileRequestID="PatternReq" IsExact="false">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="outcome" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <TopRegexPatterns>
+          <PatternDistributionItem>
+            <RegexText>HOME WIN REG</RegexText>
+            <Frequency>42</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>AWAY WIN REG</RegexText>
+            <Frequency>33</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>AWAY WIN OT</RegexText>
+            <Frequency>11</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>HOME WIN OT</RegexText>
+            <Frequency>10</Frequency>
+          </PatternDistributionItem>
+        </TopRegexPatterns>
+      </ColumnPatternProfile>
+      <ColumnPatternProfile ProfileRequestID="PatternReq" IsExact="false">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="home_rink_side_start" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <TopRegexPatterns>
+          <PatternDistributionItem>
+            <RegexText>RIGHT</RegexText>
+            <Frequency>51</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>LEFT</RegexText>
+            <Frequency>45</Frequency>
+          </PatternDistributionItem>
+        </TopRegexPatterns>
+      </ColumnPatternProfile>
+      <ColumnPatternProfile ProfileRequestID="PatternReq" IsExact="false">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="venue" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <TopRegexPatterns>
+          <PatternDistributionItem>
+            <RegexText>(\p{L}+ )+CENTER</RegexText>
+            <Frequency>39</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>(\p{L}+ )+ARENA</RegexText>
+            <Frequency>23</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>(\p{L}+ )+CENTRE</RegexText>
+            <Frequency>6</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>\p{L}+ \p{L}+</RegexText>
+            <Frequency>17</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>\p{L}+ \p{L}+ \p{L}+</RegexText>
+            <Frequency>6</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>(\p{L}+ )+</RegexText>
+            <Frequency>4</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>.*</RegexText>
+            <Frequency>6</Frequency>
+          </PatternDistributionItem>
+        </TopRegexPatterns>
+      </ColumnPatternProfile>
+      <ColumnPatternProfile ProfileRequestID="PatternReq" IsExact="false">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="venue_link" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <TopRegexPatterns>
+          <PatternDistributionItem>
+            <RegexText>/API/V1/VENUES/NULL</RegexText>
+            <Frequency>74</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>/API/V1/VENUES/\d\d\d\d</RegexText>
+            <Frequency>26</Frequency>
+          </PatternDistributionItem>
+        </TopRegexPatterns>
+      </ColumnPatternProfile>
+      <ColumnPatternProfile ProfileRequestID="PatternReq" IsExact="false">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="venue_time_zone_id" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <TopRegexPatterns>
+          <PatternDistributionItem>
+            <RegexText>AMERICA/NEW_YORK</RegexText>
+            <Frequency>44</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>AMERICA/\p{L}+</RegexText>
+            <Frequency>45</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>AMERICA/LOS_ANGELES</RegexText>
+            <Frequency>11</Frequency>
+          </PatternDistributionItem>
+        </TopRegexPatterns>
+      </ColumnPatternProfile>
+      <ColumnPatternProfile ProfileRequestID="PatternReq" IsExact="false">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <Column Name="venue_time_zone_tz" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <TopRegexPatterns>
+          <PatternDistributionItem>
+            <RegexText>EDT</RegexText>
+            <Frequency>46</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>CDT</RegexText>
+            <Frequency>14</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>PDT</RegexText>
+            <Frequency>11</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>EST</RegexText>
+            <Frequency>9</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>MDT</RegexText>
+            <Frequency>8</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>\p{L}+</RegexText>
+            <Frequency>11</Frequency>
+          </PatternDistributionItem>
+        </TopRegexPatterns>
+      </ColumnPatternProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="FDReq">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <DeterminantColumns>
+          <Column Name="date_time_GMT" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="date" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>true</IsExactFD>
+      </FunctionalDependencyProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="FDReq">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <DeterminantColumns>
+          <Column Name="venue_time_zone_tz" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="type" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>false</IsExactFD>
+        <FDStrength>0.9568903</FDStrength>
+        <FDViolations>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>CDT</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>3808</SupportCount>
+            <ViolationCount>178</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>CST</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>780</SupportCount>
+            <ViolationCount>76</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>EDT</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>11588</SupportCount>
+            <ViolationCount>409</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>EST</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>2148</SupportCount>
+            <ViolationCount>171</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>MDT</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>2100</SupportCount>
+            <ViolationCount>30</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>MST</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>1218</SupportCount>
+            <ViolationCount>51</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>PDT</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>2858</SupportCount>
+            <ViolationCount>173</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>PST</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>671</SupportCount>
+            <ViolationCount>46</ViolationCount>
+          </FDViolationItem>
+        </FDViolations>
+      </FunctionalDependencyProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="FDReq">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <DeterminantColumns>
+          <Column Name="venue" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="venue_time_zone_id" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>false</IsExactFD>
+        <FDStrength>0.9898878</FDStrength>
+        <FDViolations>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Enterprise Center</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>America/Chicago</DependentValue>
+            <SupportCount>178</SupportCount>
+            <ViolationCount>6</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Ericsson Globe</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>America/New_York</DependentValue>
+            <SupportCount>8</SupportCount>
+            <ViolationCount>4</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Globe Arena</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>America/Detroit</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Hartwall Areena</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>America/New_York</DependentValue>
+            <SupportCount>3</SupportCount>
+            <ViolationCount>2</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Hartwall Arena</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>America/New_York</DependentValue>
+            <SupportCount>2</SupportCount>
+            <ViolationCount>2</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>O2 Czech Republic</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>America/New_York</DependentValue>
+            <SupportCount>5</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Rogers Place</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>America/Edmonton</DependentValue>
+            <SupportCount>241</SupportCount>
+            <ViolationCount>145</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>SAP Center at San Jose</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>America/Los_Angeles</DependentValue>
+            <SupportCount>404</SupportCount>
+            <ViolationCount>4</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Scotiabank Arena</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>America/Toronto</DependentValue>
+            <SupportCount>162</SupportCount>
+            <ViolationCount>101</ViolationCount>
+          </FDViolationItem>
+        </FDViolations>
+      </FunctionalDependencyProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="FDReq">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <DeterminantColumns>
+          <Column Name="venue_time_zone_id" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="type" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>false</IsExactFD>
+        <FDStrength>0.9568903</FDStrength>
+        <FDViolations>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>America/Chicago</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>4162</SupportCount>
+            <ViolationCount>232</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>America/Denver</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>1660</SupportCount>
+            <ViolationCount>53</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>America/Detroit</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>836</SupportCount>
+            <ViolationCount>20</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>America/Edmonton</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>830</SupportCount>
+            <ViolationCount>9</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>America/Los_Angeles</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>2697</SupportCount>
+            <ViolationCount>181</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>America/Montreal</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>836</SupportCount>
+            <ViolationCount>33</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>America/New_York</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>11234</SupportCount>
+            <ViolationCount>506</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>America/Phoenix</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>828</SupportCount>
+            <ViolationCount>19</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>America/Toronto</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>830</SupportCount>
+            <ViolationCount>21</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>America/Vancouver</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>832</SupportCount>
+            <ViolationCount>38</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>America/Winnipeg</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>426</SupportCount>
+            <ViolationCount>22</ViolationCount>
+          </FDViolationItem>
+        </FDViolations>
+      </FunctionalDependencyProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="FDReq">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <DeterminantColumns>
+          <Column Name="venue_link" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="type" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>false</IsExactFD>
+        <FDStrength>0.9568903</FDStrength>
+        <FDViolations>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>/api/v1/venues/5017</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>148</SupportCount>
+            <ViolationCount>4</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>/api/v1/venues/5019</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>387</SupportCount>
+            <ViolationCount>12</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>/api/v1/venues/5026</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>62</SupportCount>
+            <ViolationCount>4</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>/api/v1/venues/5030</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>152</SupportCount>
+            <ViolationCount>6</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>/api/v1/venues/5034</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>152</SupportCount>
+            <ViolationCount>4</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>/api/v1/venues/5058</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>152</SupportCount>
+            <ViolationCount>6</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>/api/v1/venues/5059</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>442</SupportCount>
+            <ViolationCount>10</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>/api/v1/venues/5064</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>338</SupportCount>
+            <ViolationCount>4</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>/api/v1/venues/5066</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>148</SupportCount>
+            <ViolationCount>14</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>/api/v1/venues/5075</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>148</SupportCount>
+            <ViolationCount>6</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>/api/v1/venues/5076</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>224</SupportCount>
+            <ViolationCount>32</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>/api/v1/venues/5085</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>152</SupportCount>
+            <ViolationCount>26</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>/api/v1/venues/5094</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>148</SupportCount>
+            <ViolationCount>8</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>/api/v1/venues/5100</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>162</SupportCount>
+            <ViolationCount>136</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>/api/v1/venues/5178</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>156</SupportCount>
+            <ViolationCount>6</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>/api/v1/venues/null</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>18496</SupportCount>
+            <ViolationCount>856</ViolationCount>
+          </FDViolationItem>
+        </FDViolations>
+      </FunctionalDependencyProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="FDReq">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <DeterminantColumns>
+          <Column Name="venue" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="home_rink_side_start" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>false</IsExactFD>
+        <FDStrength>0.9928911</FDStrength>
+        <FDViolations>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Bell MTS Place</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>right</DependentValue>
+            <SupportCount>208</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Canadian Tire Centre</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>left</DependentValue>
+            <SupportCount>371</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Capital One Arena</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>right</DependentValue>
+            <SupportCount>207</SupportCount>
+            <ViolationCount>2</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Enterprise Center</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>left</DependentValue>
+            <SupportCount>178</SupportCount>
+            <ViolationCount>6</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Ericsson Globe</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>left</DependentValue>
+            <SupportCount>10</SupportCount>
+            <ViolationCount>2</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Globe Arena</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>right</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Hartwall Areena</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>right</DependentValue>
+            <SupportCount>4</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Honda Center</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>left</DependentValue>
+            <SupportCount>665</SupportCount>
+            <ViolationCount>3</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>O2 Arena</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>right</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>O2 Czech Republic</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>right</DependentValue>
+            <SupportCount>3</SupportCount>
+            <ViolationCount>3</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>PPG Paints Arena</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>left</DependentValue>
+            <SupportCount>256</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Rogers Place</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>left</DependentValue>
+            <SupportCount>281</SupportCount>
+            <ViolationCount>105</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>SAP Center at San Jose</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>left</DependentValue>
+            <SupportCount>404</SupportCount>
+            <ViolationCount>4</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Scotiabank Arena</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>right</DependentValue>
+            <SupportCount>209</SupportCount>
+            <ViolationCount>54</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>United Center</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>right</DependentValue>
+            <SupportCount>870</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Verizon Center</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>right</DependentValue>
+            <SupportCount>509</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+        </FDViolations>
+      </FunctionalDependencyProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="FDReq">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <DeterminantColumns>
+          <Column Name="venue" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="type" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>false</IsExactFD>
+        <FDStrength>0.958601</FDStrength>
+        <FDViolations>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Air Canada Centre</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>679</SupportCount>
+            <ViolationCount>9</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Amalie Arena</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>312</SupportCount>
+            <ViolationCount>36</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>American Airlines Center</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>787</SupportCount>
+            <ViolationCount>22</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>BankAtlantic Center</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>286</SupportCount>
+            <ViolationCount>4</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Barclays Center</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>185</SupportCount>
+            <ViolationCount>9</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>BB&amp;T Center</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>379</SupportCount>
+            <ViolationCount>3</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Bell MTS Place</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>193</SupportCount>
+            <ViolationCount>16</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Bridgestone Arena</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>475</SupportCount>
+            <ViolationCount>44</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Canadian Tire Centre</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>359</SupportCount>
+            <ViolationCount>13</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Capital One Arena</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>188</SupportCount>
+            <ViolationCount>21</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>CONSOL Energy Center</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>228</SupportCount>
+            <ViolationCount>37</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Enterprise Center</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>152</SupportCount>
+            <ViolationCount>32</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Honda Center</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>627</SupportCount>
+            <ViolationCount>41</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>HP Pavilion at San Jose</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>392</SupportCount>
+            <ViolationCount>16</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>HSBC Arena</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>409</SupportCount>
+            <ViolationCount>3</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Jobing.com Arena</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>306</SupportCount>
+            <ViolationCount>11</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Joe Louis Arena</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>637</SupportCount>
+            <ViolationCount>20</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Madison Square Garden</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>833</SupportCount>
+            <ViolationCount>49</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>MTS Centre</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>228</SupportCount>
+            <ViolationCount>2</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Nassau Coliseum</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>556</SupportCount>
+            <ViolationCount>6</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Nationwide Arena</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>833</SupportCount>
+            <ViolationCount>18</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>NYCB Live/Nassau Coliseum</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>90</SupportCount>
+            <ViolationCount>4</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Pepsi Center</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>824</SupportCount>
+            <ViolationCount>17</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>PNC Arena</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>382</SupportCount>
+            <ViolationCount>14</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>PPG Paints Arena</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>233</SupportCount>
+            <ViolationCount>24</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Prudential Center</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>581</SupportCount>
+            <ViolationCount>13</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Rogers Place</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>244</SupportCount>
+            <ViolationCount>142</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>SAP Center at San Jose</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>358</SupportCount>
+            <ViolationCount>50</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Scotiabank Arena</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>162</SupportCount>
+            <ViolationCount>101</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Scotiabank Place</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>310</SupportCount>
+            <ViolationCount>7</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Scotiabank Saddledome</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>458</SupportCount>
+            <ViolationCount>13</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Scottrade Center</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>473</SupportCount>
+            <ViolationCount>29</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>St. Pete Times Forum</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>342</SupportCount>
+            <ViolationCount>8</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>STAPLES Center</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>826</SupportCount>
+            <ViolationCount>38</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Tampa Bay Times Forum</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>91</SupportCount>
+            <ViolationCount>2</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>TD Garden</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>501</SupportCount>
+            <ViolationCount>71</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>T-Mobile Arena</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>197</SupportCount>
+            <ViolationCount>20</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>United Center</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>825</SupportCount>
+            <ViolationCount>46</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Verizon Center</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>474</SupportCount>
+            <ViolationCount>36</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Wells Fargo Center</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>458</SupportCount>
+            <ViolationCount>21</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Xcel Energy Center</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>830</SupportCount>
+            <ViolationCount>21</ViolationCount>
+          </FDViolationItem>
+        </FDViolations>
+      </FunctionalDependencyProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="FDReq">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <DeterminantColumns>
+          <Column Name="home_rink_side_start" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="type" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>false</IsExactFD>
+        <FDStrength>0.9568903</FDStrength>
+        <FDViolations>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>left</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>11144</SupportCount>
+            <ViolationCount>539</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>NA</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>1125</SupportCount>
+            <ViolationCount>71</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>right</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>12902</SupportCount>
+            <ViolationCount>524</ViolationCount>
+          </FDViolationItem>
+        </FDViolations>
+      </FunctionalDependencyProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="FDReq">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <DeterminantColumns>
+          <Column Name="outcome" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="type" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>false</IsExactFD>
+        <FDStrength>0.9578027</FDStrength>
+        <FDViolations>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>away win OT</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>2584</SupportCount>
+            <ViolationCount>132</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>away win REG</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>8500</SupportCount>
+            <ViolationCount>397</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>home win OT</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>2657</SupportCount>
+            <ViolationCount>127</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>home win REG</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>R</DependentValue>
+            <SupportCount>10802</SupportCount>
+            <ViolationCount>454</ViolationCount>
+          </FDViolationItem>
+        </FDViolations>
+      </FunctionalDependencyProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="FDReq">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <DeterminantColumns>
+          <Column Name="date" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="type" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>false</IsExactFD>
+        <FDStrength>0.9993157</FDStrength>
+        <FDViolations>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>2020-08-02T00:00:00.0000000</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>P</DependentValue>
+            <SupportCount>4</SupportCount>
+            <ViolationCount>4</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>2020-08-03T00:00:00.0000000</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>P</DependentValue>
+            <SupportCount>8</SupportCount>
+            <ViolationCount>4</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>2020-08-05T00:00:00.0000000</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>P</DependentValue>
+            <SupportCount>8</SupportCount>
+            <ViolationCount>4</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>2020-08-06T00:00:00.0000000</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>P</DependentValue>
+            <SupportCount>6</SupportCount>
+            <ViolationCount>4</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>2020-08-08T00:00:00.0000000</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>P</DependentValue>
+            <SupportCount>4</SupportCount>
+            <ViolationCount>2</ViolationCount>
+          </FDViolationItem>
+        </FDViolations>
+      </FunctionalDependencyProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="FDReq">
+        <DataSourceID>{6D3FC499-ED47-4D85-952E-B267E2C62A5F}</DataSourceID>
+        <Table DataSource="DESKTOP-5DSST93" Database="NHL_Game_Staging" Schema="dbo" Table="game" RowCount="26305" />
+        <DeterminantColumns>
+          <Column Name="date_time_GMT" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="type" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>true</IsExactFD>
+      </FunctionalDependencyProfile>
+    </Profiles>
+  </DataProfileOutput>
+</DataProfile>
